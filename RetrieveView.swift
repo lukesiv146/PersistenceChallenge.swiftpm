@@ -1,11 +1,6 @@
 import SwiftUI
 
 struct RetrieveView: View {
-   
-    @State var number1: Int = UserDefaults.standard.integer(forKey: "number1") // MVP - Part III
-    @State var number2: Int = UserDefaults.standard.integer(forKey: "number2")
-    
-    
     @State var url2: URL = URL(string: "https://www.apple.com")!
     @State var array: [Double] = []
     
@@ -16,9 +11,10 @@ struct RetrieveView: View {
     
     //MARK: MVP - Part III
     
+ @State var number1: Int = UserDefaults.standard.integer(forKey: "number1")
+    
+    @State var number2: Int = UserDefaults.standard.integer(forKey: "number2")
 
-    
-    
     
     
     //MARK: Stretch #1 - Part III
@@ -53,7 +49,7 @@ struct RetrieveView: View {
                 TitleView(name: "Stretch #2")
                 ForEach(array, id: \.self) { value in
                     Text("\(value) ")
-                }  
+                }
             }
             
             Group {
@@ -69,7 +65,7 @@ struct RetrieveView: View {
                 HStack {
                     Text("Phone Number: ")
                     Text(phoneNumber)
-                }  
+                }
             }
         }
         .frame(maxWidth: .infinity)
@@ -77,8 +73,8 @@ struct RetrieveView: View {
         .font(.title)
         .onAppear(perform: {
             //MARK: MVP - Part IV
-
-
+            number1 = UserDefaults.standard.integer(forKey: "number1")
+            number2 = UserDefaults.standard.integer(forKey: "number2")
 
 
             
